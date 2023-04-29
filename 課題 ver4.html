@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styleseat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>四国お遍路すごろく旅</h1>
+    </header>
+
+    <main>
+
+        <div class="wrapper">
+            <!-- すごろくが始まったらメッセージが変わっていく場所 -->
+            <div class="wrapper_left">
+                <div class="balloon2-right">
+                    <p id="message">サイコロを振って巡礼の旅に出ましょう！</p>
+                </div>
+                <div class="wrapper_img">
+                    <img src="img/yuru.jpeg" alt="ゆるキャラ">
+                </div>
+            </div>
+
+            <div class="wrapper_right">
+                <audio src="img/sai_audio.mp3" id="sai_audio"></audio>
+
+                <!-- <button>サイコロを振る</button> -->
+                <div class="wrapper_btn">
+                    <button class="btn btn--yellow btn--circle" id="rollbtn" type="button"
+                        onclick="saikoro();">サイコロを振る</button>
+                    <!-- <a href="" class="btn btn--yellow btn--circle" id="rollbtn" type="button" onclick="saikoro()">PUSH！</a> -->
+
+                </div>
+                <div>
+                    <div class="saikoro" id="saikoro"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- すごろくの盤面 -->
+        <div id="board">
+            <div class="square" id="square0"><span>Start</span></div>
+            <div class="square" id="square1"><span>1</span></div>
+            <div class="square" id="square2"><span>2</span></div>
+            <div class="square" id="square3"><span>3</span></div>
+            <div class="square" id="square4"><span>4</span></div>
+            <div class="square" id="square5"><span>5</span></div>
+            <div class="square" id="square6"><span>6</span></div>
+            <div class="square" id="square7"><span>7</span></div>
+            <div class="square" id="square8"><span>8</span></div>
+            <div class="square" id="square9"><span>9</span></div>
+            <div class="square" id="square10"><span>10</span></div>
+            <div class="square" id="square11"><span>11</span></div>
+            <div class="square" id="square12"><span>12</span></div>
+            <div class="square" id="square13"><span>13</span></div>
+            <div class="square" id="square14"><span>14</span></div>
+            <div class="square" id="square15"><span>15</span></div>
+            <div class="square" id="square16"><span>16</span></div>
+            <div class="square" id="square17"><span>17</span></div>
+            <div class="square" id="square18"><span>18</span></div>
+            <div class="square" id="square19"><span>19</span></div>
+            <div class="square" id="square20"><span>20</span></div>
+            <div class="square" id="square21"><span>21</span></div>
+            <div class="square" id="square22"><span>22</span></div>
+            <div class="square" id="square23"><span>23</span></div>
+            <div class="square" id="square24"><span>24</span></div>
+            <div class="square" id="square25"><span>25</span></div>
+            <div class="square" id="square26"><span>26</span></div>
+            <div class="square" id="square27"><span>27</span></div>
+            <div class="square" id="square28"><span>28</span></div>
+            <div class="square" id="square29"><span>29</span></div>
+            <div class="square" id="square30"><span>30</span></div>
+            <div class="square" id="square31"><span>31</span></div>
+            <div class="square" id="square32"><span>32</span></div>
+            <div class="square" id="square33"><span>33</span></div>
+            <div class="square" id="square34"><span>34</span></div>
+            <div class="square" id="square35"><span>35</span></div>
+            <div class="square" id="square36"><span>36</span></div>
+            <div class="square" id="square37"><span>37</span></div>
+            <div class="square" id="square38"><span>38</span></div>
+            <div class="square" id="square39"><span>39</span></div>
+            <div class="square" id="square40"><span>40</span></div>
+            <div class="square" id="square41"><span>41</span></div>
+            <div class="square" id="square42"><span>42</span></div>
+            <div class="square" id="square43"><span>43</span></div>
+            <div class="square" id="square44"><span>44</span></div>
+            <div class="square" id="square45"><span>45</span></div>
+            <div class="square" id="square46"><span>46</span></div>
+            <div class="square" id="square47"><span>47</span></div>
+            <div class="square" id="square48"><span>48</span></div>
+            <div class="square" id="square49"><span>49</span></div>
+            <div class="square" id="square50"><span>50</span></div>
+            <div class="square" id="square51"><span>51</span></div>
+            <div class="square" id="square52"><span>52</span></div>
+            <div class="square" id="square53"><span>53</span></div>
+            <div class="square" id="square54"><span>54</span></div>
+            <div class="square" id="square55"><span>55</span></div>
+            <div class="square" id="square56"><span>56</span></div>
+            <div class="square" id="square57"><span>57</span></div>
+            <div class="square" id="square58"><span>58</span></div>
+            <div class="square" id="square59"><span>59</span></div>
+            <div class="square" id="square60"><span>60</span></div>
+            <div class="square" id="square61"><span>61</span></div>
+            <div class="square" id="square62"><span>62</span></div>
+            <div class="square" id="square63"><span>63</span></div>
+            <div class="square" id="square64"><span>64</span></div>
+            <div class="square" id="square65"><span>65</span></div>
+            <div class="square" id="square66"><span>66</span></div>
+            <div class="square" id="square67"><span>67</span></div>
+            <div class="square" id="square68"><span>68</span></div>
+            <div class="square" id="square69"><span>69</span></div>
+            <div class="square" id="square70"><span>70</span></div>
+            <div class="square" id="square71"><span>71</span></div>
+            <div class="square" id="square72"><span>72</span></div>
+            <div class="square" id="square73"><span>73</span></div>
+            <div class="square" id="square74"><span>74</span></div>
+            <div class="square" id="square75"><span>75</span></div>
+            <div class="square" id="square76"><span>76</span></div>
+            <div class="square" id="square77"><span>77</span></div>
+            <div class="square" id="square78"><span>78</span></div>
+            <div class="square" id="square79"><span>79</span></div>
+            <div class="square" id="square80"><span>80</span></div>
+            <div class="square" id="square81"><span>81</span></div>
+            <div class="square" id="square82"><span>82</span></div>
+            <div class="square" id="square83"><span>83</span></div>
+            <div class="square" id="square84"><span>84</span></div>
+            <div class="square" id="square85"><span>85</span></div>
+            <div class="square" id="square86"><span>86</span></div>
+            <div class="square" id="square87"><span>87</span></div>
+            <div class="square" id="square88"><span>88</span></div>
+        </div>
+
+
+        <!-- モーダル -->
+        <div>
+
+            <!-- <div class="modal-open">モーダルを開く</div> -->
+
+            <div class="modal-container" id="modal-container1">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>一番札所</span>霊山寺</h3>
+                            <p>八十八カ所霊場巡りでいちばん初めに訪れる札所じゃ。ここでお遍路用品を全て買い揃えることができるぞい。</p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple01.jpeg" alt="霊山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container2">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二番札所</span>極楽寺</h3>
+                            <p>行基菩薩の開基と伝えられているが、弘仁6年（815）、42歳の弘法大師がこの地で三七日間『阿弥陀経』を読誦し、修法された。その結願の日に、阿弥陀如来が出現したので、大師はその姿を彫造して本尊とされた。この阿弥陀如来像は、尊容が美しく、発する光は遠く鳴門の長原沖まで達したという。漁民たちは、漁の妨げになると本堂の前に人工の小山を築いて光を遮ったという故事から、「日照山」と号した。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple02.jpeg" alt="極楽寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container3">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三番札所</span>金泉寺</h3>
+                            <p>弘仁年間（810〜24）になって弘法大師が四国を巡教された際、村の人たちが日照りに苦しんでいるのを見て、この地に井戸を掘られた。この井戸から湧き出た水は霊水で、「長寿をもたらす黄金の井戸」とされ、寺名の「金光明寺」を改め、「金泉寺」とした。その後、亀山天皇（在位1259〜74）が法皇になられ、弘法大師を篤く信仰されて各地の霊跡を巡拝、金泉寺にもしばらく滞在された。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple03.jpeg" alt="金泉寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container4">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四番札所</span>大日寺</h3>
+                            <p>ここは黒谷と呼ばれる幽玄の雰囲気漂う山奥の聖域じゃ。弘法大師が一刀三礼して自ら彫った薬師如来がご本尊じゃ。</p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple04.jpeg" alt="石山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container5">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五番札所</span>地蔵寺</h3>
+                            <p>嵯峨天皇（在位809〜23）の勅願により、弘仁12年弘法大師が開創された。大師は、自ら約5・5センチの勝軍地蔵菩薩を彫られ、本尊に安置したと伝えられる。その後、淳和天皇（在位823〜33）、仁明天皇（在位833〜50）の3代にわたり天皇家が篤く帰き依えされた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple05.jpeg" alt="地蔵寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container6">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六番札所</span>安楽寺</h3>
+                            <p>山門の仁王像は京都大仏師・松本明慶師の作・本堂前の拝殿には弘法大師の一代記が彫刻されている・多宝塔・さかまつ・宿坊（400年の歴史を持つ宿坊（宿泊施設）には、温泉山の名にふさわしい、天然温泉の大浴場があり、お遍路さんに好評。）
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple06.jpeg" alt="安楽寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container7">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七番札所</span>十楽寺</h3>
+                            <p>大同年間に弘法大師がこの地を巡教して逗留されたときに阿弥陀如来を感得し、如来像を刻んだのが本尊として祀られたと伝えられている。その際に、大師は生・老・病・死など人間として避けることのできない苦難に、10の光明と、輝く楽しみが得られるようにと「光明山十楽寺」の寺名を授けたといわれる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple07.jpeg" alt="十楽寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container8">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八番札所</span>熊谷寺</h3>
+                            <p>四国霊場のなかで最大級の仁王門を構える。縁起によると弘仁6年、弘法大師がこの地の閼於ヶ谷で修行をされていた。その折、紀州の熊野権現があらわれ「末世の衆生を永く済度せよ」と告げられ、5.5センチほどの金の観世音菩薩像を授け、虚空はるかに去っていったという。大師はその場にお堂を建てて、霊木に自ら一刀三礼して等身大の千手観音像を彫造し、その胎内に金の尊像を納めて本尊にされた、と伝えられている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple08.jpeg" alt="熊谷寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container9">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>九番札所</span>法輪寺</h3>
+                            <p>古くは「白蛇山法林寺」と称され、現在の地より北4キロほど山間の「法地ヶ渓」にあって、壮大な伽藍を誇っていたと伝えられる。その礎石や焼土がのこっており、これは天正10年（1582）の戦乱のさいに長宗我部元親による兵火で焼失した遺跡である。縁起によると、弘法大師がこの地方で巡教されていたときの弘仁6年、白蛇を見つけた。白蛇は仏の使いであるといわれていることから、大師は釈迦の涅槃像を彫造し、本尊として寺を開基したとされている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple09.jpeg" alt="法輪寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container10">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十番札所</span>切幡寺</h3>
+                            <p>切幡山の中腹、標高155メートルに境内がある。国指定重要文化財である大塔からの眺望はすばらしく、眼下には吉野川がゆったりと流れ、前方には四国山脈の雄大な山々が連なる。古く、この山麓に機を織る乙女がいた。ここで修法していた弘法大師は、結願の7日目、綻びた僧衣を繕うために布切れを所望された。乙女は、織りかけていた布を惜しげもなく切って差し出した。大師は、この厚意にたいへん感動し、「何か望みはないか」と尋ねた。乙女は、「父は都で薬子の変に関係して島流しとなり、母は身ごもっていたが、男の子が産まれればその子も咎を受ける。どうか女の子が産まれるようにと、清水の観音様に祈願し、やがてこの地に来て産まれたのが私です」といい、「亡き父母に代わり、観音様をつくってお祀りし、わたしも仏門に入って精進したい」と願いを告白した。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple10.jpeg" alt="切幡寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container11">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十一番札所</span>藤井寺</h3>
+                            <p>三方を山に囲まれ、渓流の清らかな仙境に心を惹かれた弘法大師が、この地で護摩修法をされたのは弘仁6年のことと伝えられている。大師は42歳の厄年に当たり、自らの厄難を祓い、衆生の安寧を願って薬師如来像を彫造して、堂宇を建立した。その地からおよそ200メートル上の8畳岩に、金剛不壊といわれる堅固な護摩壇を築いて、一七日間の修法をされた。その堂宇の前に5色の藤を植えたという由緒から、金剛山藤井寺と称されるようになった。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple11.jpeg" alt="藤井寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container12">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十二番札所</span>焼山寺</h3>
+                            <p>焼山寺山（標高938メートル）の8合目近くにあり、四国霊場で2番目に高い山岳札所。剣山や白髪山など四国山脈の山々がひろがる眺望はすばらしい。四国霊場には「遍路ころがし」といわれた札所がいくつかあるが、焼山寺もその一つで、昔から嶮しい坂道の難所を辿る「修行の霊場」であった。いまは山上まで車道が通っている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple12.jpeg" alt="焼山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container13">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十三番札所</span>大日寺</h3>
+                            <p>開基は弘法大師とされ、縁起によると「大師が森」というこの地で護摩修法をされていたさいに、空中から大日如来が紫雲とともに舞いおり、「この地は霊地なり。心あらば一宇を建立すべし」と告げられた。大師は、さっそく大日如来像を彫造して本尊とし、堂宇を建立し安置したと伝えられている。寺名の由来もこの縁起による。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple13.jpeg" alt="大日寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container14">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十四番札所</span>常楽寺</h3>
+                            <p>四国霊場のなかで唯一、弥勒菩薩を本尊としている。弥勒菩薩は56億7千万年の後まで、衆生の救済を考え続けて出現するといわれる未来仏である。とくに京都・広隆寺の国宝で、片膝を立てて頬を右手でささえ考える半跏思惟の弥勒像は、そのやさしいお顔の表情が美しく、お大師さまとともに光明を授けてくれるような仏といえよう。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple14.jpeg" alt="常楽寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container15">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十五番札所</span>國分寺</h3>
+                            <p>縁起によると、阿波國分寺には聖武天皇から釈迦如来の尊像と『大般若経』が納められ、本堂には光明皇后のご位牌厨子を奉祀されたと伝えられている。開基は行基菩薩で、自ら薬師如来を彫造し本尊としている。創建当初は奈良の法隆寺や薬師寺、興福寺と同じ南都の学派に属する法相宗であり、寺領は二町四方で、ここに金堂を中心に七重塔も建つ壮大な七堂伽藍が整っていた。この寺域からは塔の礎石などが発掘されており、徳島県の史跡に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple15.jpeg" alt="國分寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container16">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十六番札所</span>観音寺</h3>
+                            <p>聖武天皇（在位724〜49）が天平13年、全国68ヶ所に国分寺・国分尼に寺を創建したときに、行基菩薩に命じて勅願道場として建立した由緒ある古刹とされている。弘法大師がこの地を訪ねているのは弘仁7年（816）のころで、本尊像などを彫造して再興し、現在の寺名を定めたとされている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple16.jpeg" alt="観音寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container17">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十七番札所</span>井戸寺</h3>
+                            <p>本尊は、薬師瑠璃光如来を主尊とする七仏の薬師如来坐像で、聖徳太子の作と伝えられ、また、脇仏の日光・月光菩薩像は行基菩薩の彫造と伝えられる。のち弘仁6年（815）に弘法大師がこれらの尊像を拝むために訪れたとき、檜に像高約1.9メートルの十一面観音像を彫って安置されている。この像は、右手に錫杖、左手に蓮華を挿した水瓶をもった姿形で、現在、国の重要文化財に指定されている。大師はまた、この村が水不足や濁り水に悩んでいるのを哀れみ、自らの錫杖で井戸を掘ったところ、一夜にして清水が湧き出した。そこで付近を「井戸村」と名付け、寺名も「井戸寺」に改めたという。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple17.jpeg" alt="井戸寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container18">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十八番札所</span>恩山寺</h3>
+                            <p>延暦年間（782〜806）になって、弘法大師がこの寺で修行をしていたころという。大師の生母・玉依御前が讃岐の善通寺から訪ねてきた。だが、寺は女人禁制、大師は山門近くの瀧にうたれて7日間の秘法を修し、女人解禁の祈願を成就して母君を迎えることができた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple18.jpeg" alt="恩山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container19">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>十九番札所</span>立江寺</h3>
+                            <p>弘仁6年（815）、弘法大師が当寺を訪れ、このご本尊を拝した。大師は、あまりに小さなご本尊なので、後世になって失われる恐れがあると、自ら一刀三礼をして新たに像高1.9メートルもある大きな延命地蔵像を彫造され、その胎内に行基菩薩が彫ったご本尊を納められた。このときに寺名を「立江寺」と号した。当時は現在地より西へ400メートルほど山寄りの景勝地にあって、七堂伽藍を備えた巨刹であったといわれる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple19.jpeg" alt="立江寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container20">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十番札所</span>鶴林寺</h3>
+                            <p>寺伝によると延暦17年、桓武天皇（在位781・806）の勅願により、弘法大師によって開創された。大師がこの山で修行していたとき、雌雄2羽の白鶴がかわるがわる翼をひろげて老杉のこずえに舞い降り、小さな黄金のお地蔵さんを守護していた。この情景を見て歓喜した大師は、近くにあった霊木で高さ90センチほどの地蔵菩薩像を彫造、その胎内に5.5センチぐらいの黄金の地蔵さんを納めて本尊とし、寺名を鶴林寺にしたといわれる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple20.jpeg" alt="鶴林寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container21">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十一番札所</span>太龍寺</h3>
+                            <p>「西の高野」とも称される。四国山脈の東南端、標高618メートルの太龍寺山の山頂近くにある。樹齢数百年余の老杉の並木が天空にそびえ、境内には古刹の霊気が漂う。弘法大師が19歳のころ、この深奥の境内から南西約600メートルの「舎心嶽」という岩上で、100日間の虚空蔵求聞持法を修行されたという伝えは、大師が24歳のときの著作『三教指帰』に記されており、よく知られている。虚空蔵求聞持法は、真言を百万遍となえる最も難行とされる修法で、大師青年期の思想形成に大きな影響を及ぼしている。縁起によると延暦12年、桓武天皇（在位781〜86）の勅願により堂塔が建立され、弘法大師が本尊の虚空蔵菩薩像をはじめ諸尊を造像して安置し、開創した。山号は修行地の舎心嶽から、また寺名は修行中の大師を守護した大龍（龍神）にちなんでいる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple21.jpeg" alt="太龍寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container22">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十二番札所</span>平等寺</h3>
+                            <p>大師はこの地での修行を志し加持水を求めて井戸を掘られたところ、乳のごとき白い水が湧き溢れました。その霊水で御を清められた大師は百日間護摩行を続けた後に先のお薬師さまの姿を木に刻まれ本尊として奉安し、山号を白き水が湧いたことから白水山（はくすいざん）、寺号を平等寺と定められました。
+                                以後、寺は大規模に栄えましたが江戸初期頃までに一度興廃し、1680年に伊予から来た中興一世照俊阿闍梨らによって再興され、現在に至っています。現存する本堂が再建されたのは1737年、大師堂は1824年建立です。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple22.jpeg" alt="平等寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container23">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十三番札所</span>薬王寺</h3>
+                            <p>薬王寺は、四国八十八箇所霊場の中でも、多くの人々が病気平癒のお願いをする札所である。境内には、大小様々な堂宇や、寺宝の仏像が多数安置されており、ゆったりとした雰囲気が漂う。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple23.jpeg" alt="薬王寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container24">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十四番札所</span>最御崎寺</h3>
+                            <p>「修行の道場」とされる土佐最初の霊場。太平洋の白い波涛が吠えたてる室戸岬の突端にある。黒潮のしぶきにあらわれて鋭角になった黒い岩礁。そのすさまじい響き、空と海が一体となり襲いかかる洞窟の樹下で、藤衣を被って風雨を凌ぎ、虚空蔵求聞持法の修法に励む青年・空海がいた。延暦11年（792）、弘法大師19歳のころとされている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple24.jpeg" alt="最御崎寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container25">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十五番札所</span>津照寺</h3>
+                            <p>室津港を見下ろす小山の上にたたずむ「津照寺」（しんしょうじ）は、通称「津寺」（つでら）と呼ばれています。弘法大師空海上人が四国御修行の砌、山の形が地蔵菩薩の持つ宝珠（ほうしゅ）に似ているところから霊地とし地蔵菩薩を自ら刻まれ本尊とし、宝珠山真言院津照寺と号されました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple25.jpeg" alt="津照寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container26">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十六番札所</span>金剛頂寺</h3>
+                            <p>室戸岬から海岸沿いに西北に向かうと、土佐湾につき出した小さな岬がある。硯が産出するので硯が浦ともいわれる「行当岬」である。その岬の頂上、原始林の椎に覆われて静寂さがただよう境内が金剛頂寺であり、室戸三山の一寺院として「西寺」の通称でも親しまれている。朱印も「西寺」と捺される。当寺から4㎞のところに女人堂と呼ばれる不動堂がある。若き弘法大師はこの間を毎日行き来し修行した霊地であり、行道したことから、「行当」はその名残かもしれない。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple26.jpeg" alt="金剛頂寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container27">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十七番札所</span>神峯寺</h3>
+                            <p>神峯山中腹の標高450メートルに山門、境内が広がる。
+                                幕末のころ、三菱財閥を築いた岩崎弥太郎の母が、息子の出世を祈願し往復20kmの道のりを21日間日参したという話は、いまも伝わっている。
+                                縁起による歴史の古さは屈指で、神功皇后（在位201〜69）の世に勅命で天照大神などを祀る神社が起源とされる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple27.jpeg" alt="神峯寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container28">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十八番札所</span>大日寺</h3>
+                            <p>縁起によると、聖武天皇（在位724〜49）の勅願により、行基菩薩が大日如来の尊像を彫造し、堂宇に安置して開創されたと伝えられる。その後、寺は荒廃したが、弘法大師が四国を巡教された弘仁6年（815）、末世の人々の安泰を祈り、楠の大木に爪で薬師如来像を彫られ、これを祀って復興されたという。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple28.jpeg" alt="大日寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container29">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>二十九番札所</span>国分寺</h3>
+                            <p>本尊千手観世音菩薩を祀る国分寺の本堂（金堂）は、長宗我部国親元親親子が、永禄元年に再建。外観は柿葺き、寄棟造りで天平様式を伝え、内部の海老紅梁は土佐最古といわれ、室町時代の特色が見られる。現在国の重要文化財に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple29.jpeg" alt="国分寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container30">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十番札所</span>善楽寺</h3>
+                            <p>本堂左隣の大師堂は大正時代の建立。ここの大師像は「厄除け大師」として知られ、厄年にお参りしたり、交通安全などを祈願すると霊験があらたかと伝えられる。また、境内には「子安地蔵堂」があり、弘法大師作といわれるやさしいお顔の地蔵尊が祀られている。難産で苦しんでいる妊婦を、大師が祈祷し安産させたという伝説があり、安産や子宝祈願にご利益があるといわれる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple30.jpeg" alt="善楽寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container31">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十一番札所</span>竹林寺</h3>
+                            <p>縁起では、神亀元年ころ、聖武天皇（在位724〜49）が中国・五台山に登り、文殊菩薩に拝した夢を見た。天皇は、行基菩薩に五台山の霊地に似た山容を見つけるよう命じた。行基菩薩はこの地が天皇の霊夢にふさわしいと感得、自ら栴檀の木に文殊菩薩像を彫り、山上に本堂を建てて安置した。その後、大同年間（806〜10）に弘法大師がここに滞在して瑜伽行法を修法し、荒廃した堂塔を修復、霊場にされたという。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple31.jpeg" alt="竹林寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container32">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十二番札所</span>禅師峰寺</h3>
+                            <p>行基菩薩が聖武天皇（在位724〜49）から勅命をうけて、土佐沖を航行する船舶の安全を願って、堂宇を建てたのが起源とされている。のち、大同1年、奇岩霊石が立ち並ぶ境内を訪れた弘法大師は、その姿を観音の浄土、仏道の理想の山とされる天竺・補陀落山さながらの霊域であると感得し、ここで虚空蔵求聞持法の護摩を修法された。このとき自ら十一面観世音菩薩像を彫造して本尊とされ、「禅師峰寺」と名付け、また、峰山の山容が八葉の蓮台に似ていたことから「八葉山」と号した。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple32.jpeg" alt="禅師峰寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container33">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十三番札所</span>雪蹊寺</h3>
+                            <p>鎌倉時代の高名な大仏師、運慶とその長男、湛慶がこの寺に滞在し、運慶は本尊の薬師如来像と脇侍の日光・月光菩薩像を制作、また、湛慶は毘沙門天像と吉祥天女像、つぶらな瞳で小首をかしげるかわいい善膩師童子像を彫造して安置したとされる。一時、慶運寺と名のったのもこうした由縁で、弟子の道運、海覚作の12神将共に16体、これらはすべて国の重要文化財に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple33.jpeg" alt="雪蹊寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container34">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十四番札所</span>種間寺</h3>
+                            <p>敏達天皇の6年（577）百済の皇子から多くの経論とともに、仏師や造寺工を贈る旨の勅書がとどいた。彼らが渡来したのは用明天皇（在位585〜87）の時代、大阪・四天王寺の造営にあたった。ようやく落慶し、その帰途の航海中であった。土佐沖で強烈な暴風雨におそわれて、種間寺が建つ本尾山にほど近い秋山の港に難を逃れて寄港した。彼らは、海上の安全を祈って約145㎝の薬師如来坐像を彫造し、本尾山の山頂に祀った。これが寺の起源とされている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple34.jpeg" alt="種間寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container35">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十五番札所</span>清瀧寺</h3>
+                            <p>養老7年に行基菩薩が行脚していたところ、この地で霊気を感得して薬師如来像を彫造した。これを本尊として堂舎を建て、「影山密院・釋本寺」と名づけて開山したのが初めと伝えられている。弘法大師が訪ねたのは弘仁年間（810〜24）のころ。本堂から300mほど上の岩上に壇を築き、五穀豊穣を祈願して閼伽井権現と龍王権現に一七日の修法をした。満願の日に金剛杖で壇を突くと、岩上から清水が湧き出て鏡のような池になったという。そこで山号や院号、寺名を現在のように改め、霊場とした。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple35.jpeg" alt="清瀧寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container36">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十六番札所</span>青龍寺</h3>
+                            <p>弘法大師が唐に渡り、長安の青龍寺で密教を学び、恵果和尚から真言の秘法を授かって真言第八祖となられ、帰朝したのは大同元年（806）であった。縁起では、大師はその恩に報いるため日本に寺院を建立しようと、東の空に向かって独鈷杵を投げ、有縁の勝地が選ばれるようにと祈願した。独鈷杵は紫雲に包まれて空高く飛び去った。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple36.jpeg" alt="青龍寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container37">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十七番札所</span>岩本寺</h3>
+                            <p>歴史は天平の世まで遡る。寺伝によれば、聖武天皇の勅を奉じた行基菩薩が、七難即滅、七福即生を祈念して、現在地より北西約3㎞の付近にある仁井田明神の傍に建立したと伝えられる末寺七ヶ寺をもつ福圓満寺が前身とされる。仁井田明神の別当職（別当寺）であったことから、仁井田寺とも呼ばれていた。弘法大師がこの寺を訪ねたのは弘仁年間。大師は一社に祀られていた仁井田明神のご神体を五つの社に別け、それぞれの社に不動明王像、観音菩薩像、阿弥陀如来像、薬師如来像、地蔵菩薩像を本地仏として安置した。大師は、さらに末寺五ヶ寺を建立された。このことから、福圓満寺等は七ヶ寺と合わせて十二福寺、また仁井田明神は仁井田五社と呼ばれていた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple37.jpeg" alt="岩本寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container38">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十八番札所</span>金剛福寺</h3>
+                            <p>四国の最南端、国立公園の足摺岬を見下ろす丘の中腹にあり、境内は120,000平方メートルを誇る大道場。弘法大師はその岬突端に広がる太平洋の大海原に観世音菩薩の理想の聖地・補陀落の世界を感得した。ときの嵯峨天皇（在位809〜23）に奏上、勅願により伽藍を建立、勅額「補陀洛東門」を受し、開創したと伝えられる。弘仁13年、大師49歳のころといわれる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple38.jpeg" alt="金剛福寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container39">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>三十九番札所</span>延光寺</h3>
+                            <p>時代は平安中期、延喜11年（911）のころ、竜宮に棲んでいた赤亀が背中に銅の梵鐘を背負ってきたという。僧たちは早速これを寺に奉納して、これまでの山号、寺名を「赤亀山延光寺」に改めた。この梵鐘には、「延喜十一年正月…」の銘が刻まれ、総高33.6㎝、口径23㎝の小柄な鐘で、明治のはじめ高知県議会の開会と閉会の合図に打ち鳴らされていたともいわれ、国の重要文化財に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple39.jpeg" alt="延光寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container40">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十番札所</span>観自在寺</h3>
+                            <p>弘法大師が大同2年に平城天皇（在位806〜09）の勅命を受けてこの地を訪れ、1本の霊木から本尊の薬師如来と脇侍の阿弥陀如来、十一面観音菩薩の三尊像を彫造して安置し、開創したとされている。このとき、残った霊木に「南無阿弥陀仏」と6字の名号を彫り、舟形の宝判を造って庶民の病根を除く祈願をなされた。.6㎝、口径23㎝の小柄な鐘で、明治のはじめ高知県議会の開会と閉会の合図に打ち鳴らされていたともいわれ、国の重要文化財に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple40.jpeg" alt="観自在寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container41">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十一番札所</span>龍光寺</h3>
+                            <p>大同2年に弘法大師がこの地を訪ねた際に、稲束を背負ったひとりの白髪の老人があらわれ、「われこの地に住み、法教を守護し、諸民を利益せん」と告げて、忽然と姿を消した。大師は、この老翁が五穀大明神の化身であろうと悟り、その明神を勧請して稲荷明神像を彫造、堂宇を建てて安置した。このとき、本地仏とする十一面観世音菩薩と、脇侍として不動明王、毘沙門天も造像して一緒に安置し、「稲荷山龍光寺」と号して四国霊場の総鎮守の寺とされ、開創したと伝えられる。.6㎝、口径23㎝の小柄な鐘で、明治のはじめ高知県議会の開会と閉会の合図に打ち鳴らされていたともいわれ、国の重要文化財に指定されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple41.jpeg" alt="龍光寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container42">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十二番札所</span>仏木寺</h3>
+                            <p>大同2年のころ、弘法大師はこの地で牛を引く老人と出会った。誘われるまま牛の背に乗って歩むと、楠の大樹の梢に一つの宝珠がかかって、光を放っているのを目にした。よく見ると、これは大師が唐から帰朝するときに、有縁の地が選ばれるようにと、三鈷とともに東方に向かって投げた宝珠であった。大師は、この地こそ霊地であると感得、堂宇の建立を決心した。大師は自ら楠で大日如来像を彫造、眉間に宝珠を埋めて白毫とした。これを本尊として安置し、「一カ山仏木寺」と名づけ、草字体で書写した『般若心経』と『華厳経』一巻を奉納されたと伝えられる。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple42.jpeg" alt="仏木寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container43">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十三番札所</span>明石寺</h3>
+                            <p>弘仁13年（822）には弘法大師がこの地を訪ねている。荒廃した伽藍を見た大師は、嵯峨天皇（在位809〜23）に奏上して勅命を受け、金紙金泥の『法華経』を納めて、諸堂を再興した。その後、鎌倉時代になってから再び荒れ果てた伽藍の修復に当たったのは、源頼朝である。建久5年（1194）、頼朝は命の恩人である池禅尼の菩提を弔って阿弥陀如来像を奉納、また経塚をきずいて、山号の現光山を「源光山」に改めた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple43.jpeg" alt="明石寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container44">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十四番札所</span>大寶寺</h3>
+                            <p>縁起は大和朝廷の時代まで遡る。百済から来朝した聖僧が、携えてきた十一面観音像をこの山中に安置していた。飛鳥時代になって大宝元年のこと、安芸（広島）からきた明神右京、隼人という兄弟の狩人が、菅草のなかにあった十一面観音像を見つけ、草庵を結んでこの尊像を祀った。ときの文武天皇（在位697〜707）はこの奏上を聞き、さっそく勅命を出して寺院を建立、元号にちなんで「大寶寺」と号し、創建された。弘法大師がこの地を訪れたのは、およそ120年後で弘仁13年（822）、密教を修法されて、四国霊場の中札所と定められ、これを機に天台宗だった宗派を真言宗に改めた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple44.jpeg" alt="大寶寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container45">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十五番札所</span>岩屋寺</h3>
+                            <p>弘法大師がこの霊地を訪ねたのは弘仁6年とされている。そのころすでに土佐の女性が岩窟に籠るなどして、法華三昧を成就、空中を自在に飛行できる神通力を身につけ、法華仙人と称していたという。だが仙人は、大師の修法に篤く帰依し、全山を献上した。大師は木造と石造の不動明王像を刻み、木像は本尊として本堂に安置し、また、石像を奥の院の秘仏として岩窟に祀り、全山をご本尊の不動明王として護摩修法をなされた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple45.jpeg" alt="岩屋寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container46">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十六番札所</span>浄瑠璃寺</h3>
+                            <p>行基菩薩が奈良の大仏開眼に先だち、和銅元年に布教のためにこの地を訪れ、仏法を修行する適地として伽藍を建立した。白檀の木で薬師如来像を彫って本尊とし、脇侍に日光・月光菩薩と、眷属として十二神将を彫造して安置した。寺名は薬師如来がおられる瑠璃光浄土から「浄瑠璃寺」とし、山号もまた医王如来に因んだ。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple46.jpeg" alt="浄瑠璃寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container47">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十七番札所</span>八坂寺</h3>
+                            <p>弘法大師がこの寺で修法したのは百余年後の弘仁6年（815）、荒廃した寺を再興して霊場と定めた。本尊の阿弥陀如来坐像は、浄土教の論理的な基礎を築いた恵心僧都源信（942〜1017）の作と伝えられる。その後、紀州から熊野権現の分霊や十二社権現を奉祀して修験道の根本道場となり、「熊野八坂寺」とも呼ばれるようになった。このころは境内に12坊、末寺が48ヶ寺と隆盛をきわめ、僧兵を抱えるほど栄えた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple47.jpeg" alt="八坂寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container48">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十八番札所</span>西林寺</h3>
+                            <p>聖武天皇（在位724〜49）の天平13年、行基菩薩が勅願により伊予に入り、国司、越智玉純公とともに一宮別当寺として堂宇を建立した。その地は現在の松山市小野播磨塚あたりの「徳威の里」とされ、本尊に十一面観音菩薩像を彫造して安置した。大同2年（807）弘法大師が四国の霊跡を巡礼した際この寺に逗留した。ここで大師は国司の越智実勝公と協議、寺をいまの地に移して四国霊場と定め、国家の安泰を祈願する道場とされた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple48.jpeg" alt="西林寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container49">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>四十九番札所</span>浄土寺</h3>
+                            <p>空也上人が四国を巡歴し、浄土寺に滞留したのは平安時代中期で、天徳年間（957〜61）の3年間、村人たちへの教化に努め、布教をして親しまれた。鎌倉時代の建久３年（1192）、源頼朝が一門の繁栄を祈願して堂塔を修復した。だが、応永23年（1416）の兵火で焼失、文明年間（1469〜87）に領主、河野道宣公によって再建された。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple49.jpeg" alt="浄土寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container50">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十番札所</span>繁多寺</h3>
+                            <p>天平勝宝年間に孝謙天皇（在位749〜58）の勅願により、行基菩薩が薬師如来像を彫造して安置し、建立したと伝えられ、天皇より祭具としての幡を賜った為にこれが寺名になったという説もある。弘仁年間（810~24）、弘法大師がこの地を巡錫し、寺に逗留された。
+                                その後、寺は衰微するが伊予の国司・源頼義や僧・堯蓮らの援助で再興、弘安2年（1279）には後宇多天皇（在位1274〜87）の勅命をうけ、この寺で聞月上人が蒙古軍の撃退を祈祷している。また、時宗の開祖・一遍上人（1239〜89）が青年期に、太宰府から伊予に帰郷した際、有縁の寺に参籠して修行した。上人は晩年の正応元年（1288）、亡父・如仏が所蔵していた『浄土三部経』をこの寺に奉納されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple50.jpeg" alt="繁多寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container51">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十一番札所</span>石手寺</h3>
+                            <p>日本最古といわれる道後温泉の近く。参道が回廊形式となり仲見世のみやげ店が並ぶ。境内は、巡礼者よりも地元のお大師さん信者や観光客が多い霊場である。
+                                そのもう一つの要因は、境内ほとんどの堂塔が国宝、国の重要文化財に指定されている壮観さで、それに寺宝を常時展示している宝物館を備えており、四国霊場では随一ともいえる文化財の寺院である。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple51.jpeg" alt="石手寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container52">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十二番札所</span>太山寺</h3>
+                            <p>長者は豊後（大分）でふいごの炭焼きをしていたが、神のお告げで久我大臣の娘・王津姫と結婚、いらい運が開けて大富豪となった。用明2年（587）、商いのため船で大阪に向かうとき大暴風雨に遭い、観音さまに無事を祈願したところ、高浜の岸で救われた。この報恩にと一宇の建立を大願し、豊後の工匠を集めて間口66尺、奥行き81尺の本堂を建てる木組みを整えて船積みした。順風をうけて高浜に到着、夜を徹して組み上げ、燦然と朝日が輝くころに本堂は建ち上がった。いらい「一夜建立の御堂」と伝えられている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple52.jpeg" alt="太山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container53">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十三番札所</span>圓明寺</h3>
+                            <p>天平勝宝元年、聖武天皇（在位724〜49）の勅願により、行基菩薩が本尊の阿弥陀如来像と脇侍の観世音菩薩像、勢至菩薩像を彫造して安置し、七堂伽藍を備えた大寺として建立したのが創建とされている。当時は、和気浜の西山という海岸にあり「海岸山・圓明密寺」と称したという。
+                                のち、弘法大師が荒廃した諸堂を整備し、霊場の札所として再興したが、鎌倉時代に度重なる兵火で衰微、元和年間（1615〜24）に土地の豪族・須賀重久によって現在地に移された。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple53.jpeg" alt="圓明寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container54">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十四番札所</span>延命寺</h3>
+                            <p>養老四年に聖武天皇（在位724〜49）の勅願により、行基菩薩が大日如来の化身とされる不動明王像を彫造して本尊とし、伽藍を建立して開創した。弘仁年間（810〜24）になって、弘法大師が嵯峨天皇（在位809〜23）の勅命をうけ、伽藍を信仰と学問の中心道場として再興、「不動院・圓明寺」と名づけ、勅願所とした。
+
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple54.jpeg" alt="延命寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container55">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十五番札所</span>南光坊</h3>
+                            <p>四国霊場のうち「坊」がつく寺院はこの南光坊だけである。正式には光明寺金剛院南光坊という。今治市の中心街にあるが起源は古く、航海の神、総鎮守・伊予一の宮の大山祇神社と深くかかわる歴史を有する。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple55.jpeg" alt="南光坊">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container56">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十六番札所</span>泰山寺</h3>
+                            <p>泰山寺には、水難で人命を失う悪霊のたたりを鎮めた伝説が根強く残っている。
+                                弘法大師がこの地を訪れたのは弘仁6年のころ。蒼社川という川がこの地方を流れており、毎年梅雨の季節になると氾濫して、田地や家屋を流し、人命を奪っていたため、村人たちは恐れ苦しみ、人取川といって悪霊のしわざと信じていた。この事情を聴いた大師は、村人たちと堤防を築いて、「土砂加持」の秘法を七座にわたり修法したところ、満願の日に延命地蔵菩薩を空中に感得し、治水祈願が成就したことを告げた。ｓ
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple56.jpeg" alt="泰山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container57">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十七番札所</span>栄福寺</h3>
+                            <p>嵯峨天皇（在位809〜23）の勅願により、大師がこの地を巡教したのは弘仁年間であった。内海の風波、海難の事故の平易を祈って、府頭山の山頂で護摩供を修法された。その満願の日、風波はおさまり、海上には阿弥陀如来の影向が漂った。この阿弥陀如来の尊像を府頭山頂で堂宇を建て、本尊として安置したのが創建といわれ、勅願寺とされた。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple57.jpeg" alt="栄福寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container58">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十八番札所</span>仙遊寺</h3>
+                            <p>創建は天智天皇（在位668〜71）の勅願により、伊予の国主・越智守興公が堂宇を建立、本尊の千手観音菩薩像は天皇の念持仏として、海から上がってきた竜女が一刀三礼しながら彫って安置したとされる。このことから「作礼山」が山号となり、竜宮から届けられたという伝説もある。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple58.jpeg" alt="仙遊寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container59">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>五十九番札所</span>国分寺</h3>
+                            <p>国分寺は天平13年、聖武天皇（在位724〜49）の勅願により行基菩薩が本尊の薬師如来像を彫造して安置し、開創したと伝えられる。第3世住職・智法律師のとき、弘法大師が長く滞在して「五大尊明王」の画像一幅を奉納、また大師の弟子・真如（？〜862年）も2年間留まり、『法華経』の一部を書写して納められている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple59.jpeg" alt="国分寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container60">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十番札所</span>横峰寺</h3>
+                            <p>弘法大師・空海が24歳の若いときの著書『三教指帰』の中で「或時は石峯に跨って粮を絶ち（断食）轗軻（苦行練行）たり」と、この山で修行した様子を記している。境内は石鎚山の山系の北側中腹（750ｍ）にある。四国霊場のうちでは3番目の高地にあり、「遍路ころがし」の最難所であった。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple60.jpeg" alt="横峰寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container61">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十一番札所</span>香園寺</h3>
+                            <p>弘法大師が訪れたのは大同年間（806〜10）であった。ある日、門前で身重の婦人が苦しんでいた。大師は、栴檀の香を焚いて加持、祈祷をした。すると婦人は元気な男子を無事に出産した。これが機縁となり、大師は唐から持ち帰った小さな金の大日如来像を本尊の胸に納め、再び栴檀の香を焚いて安産、子育て、身代わり、女人成仏を祈る「四誓願」の護摩修法をされて寺に遺し、霊場に定められた。「栴檀山」はこれに由来する。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple61.jpeg" alt="香園寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container62">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十二番札所</span>宝寿寺</h3>
+                            <p>弘法大師がこの地方を訪ねたのは大同年間（806～10）で、寺に久しく留まり聖武天皇の妃である光明皇后の姿をかたどった十一面観世音菩薩像を彫造した。これを本尊とし、寺名を「宝寿寺」と改めて霊場とされた。
+                                また、この頃国司だった越智氏の夫人が難産で苦しんでいたので大師に祈念を頼み、大師が本尊に祈願した霊水・玉ノ井（現存しない）で加持したところ、夫人は玉のような男子を無事出産したことから安産の観音様としても信仰されたという。ただ、中山川のたび重なる洪水の被害を受け、天養2年（1145）に堂宇を再建し、山号も「天養山」と改めている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple62.jpeg" alt="宝寿寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container63">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十三番札所</span>吉祥寺</h3>
+                            <p>弘法大師がこの地方を巡教したのは弘仁年間とされ、その折に大師は1本の光を放つ檜を見つけ、一帯に霊気が満ちているのを感得した。大師は、この霊木で本尊とする毘沙聞天像を彫造、さらに脇侍として吉祥天像と善膩師童子像を彫って安置し、貧苦からの救済を祈願して堂宇を建立したのが開創と伝えられている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple63.jpeg" alt="吉祥寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container64">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十四番札所</span>前神寺</h3>
+                            <p>開創は、天武天皇（在位673～86）時代に修験道の祖・役行者小角が石鎚山で修行を積んだ後、衆生の苦を救済するために釈迦如来と阿弥陀如来が石鈇山大権現となって現れたのを感得し、尊像を彫って安置し祀ったことに縁起する。その後、桓武天皇（在位781～806）が病気平癒を祈願し成就されたことにより七堂伽藍を建立し、勅願寺「金色院・前神寺」の称号を下賜された。以降、文徳天皇、高倉天皇、後鳥羽天皇、順徳天皇など多くの歴代天皇の信仰が厚かった。
+                                後に空海（弘法大師）も2度石鎚山を巡鍚し虚空蔵求聞持法や護摩修行、断食修行などを行ったことが知られている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple64.jpeg" alt="前神寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container65">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十五番札所</span>三角寺</h3>
+                            <p>聖武天皇（在位724〜49）の勅願によって、行基菩薩が弥勒の浄土を模して具現するために開創したと伝えられる。その後、弘仁6年（815）に弘法大師が訪れ、本尊の十一面観音像を彫造して安置された。さらに、大師は不動明王像も彫られ、三角の護摩壇を築いて21日間、国家の安泰と万民の福祉を祈念して「降伏護摩の秘法」を修法されたという。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple65.jpeg" alt="三角寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container66">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十六番札所</span>雲辺寺</h3>
+                            <p>四国霊場のうち最も高い標高911メートル、四国山脈の山頂近くにある霊場で、「遍路ころがし」と呼ばれる難所とされた。現在は、麓からロープウエーで山頂駅まで登ることができる。住所は徳島県だが、霊場としては讃岐の打ち始めでいわば「関所寺」。縁起によると、弘法大師は雲辺寺に3度登っている。最初は延暦8年、大師が16歳のときで善通寺（第七十五番）の建材を求めてであったが、深遠な霊山に心うたれて堂宇を建立した。これが雲辺寺の創建とされている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple66.jpeg" alt="雲辺寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container67">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十七番札所</span>大興寺</h3>
+                            <p>天平十四年（742）熊野三所権現鎮護のために東大寺末寺として現在地よりも約1キロ北西に建立され、延暦11年（792）大師の巡錫を仰ぎ、弘仁13年（823）嵯峨聖帝の勅により再興されたと伝えられている。しかしながら、戦国時代末、長宗我部元親の兵火により一部を残してことごとくを焼失、慶長年間（1596〜1615）に再建されたが再び焼亡、本堂は寛保元年（1741）に建立されたものである。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple67.jpeg" alt="大興寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container68">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十八番札所</span>神恵院</h3>
+                            <p>六十八番・神恵院も六十九番・観音寺も琴弾公園内の琴弾山の中腹にあります。2つの札所が同じ境内に存在する、とても珍しい霊場です。
+                                開基したのは法相宗の高僧・日証上人といわれています。大宝3年（703）この地で修行中、宇佐八幡宮のお告げを受け、かなたの海上で神船と琴を発見。琴弾山に引き上げ、「琴弾八幡宮」を建立して祀りました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple68.jpeg" alt="神恵院">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container69">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>六十九番札所</span>観音寺</h3>
+                            <p>創建されたころの寺号は「神宮寺宝光院」と称した。以来、100年後の縁起からたどる。大同2年（807）、弘法大師は琴弾八幡宮の本地仏である阿弥陀如来像を納めたとき、この寺の第7世住職となって入山したと伝わる。そこで大師は、琴弾山の中腹に奈良の興福寺に倣って中金堂、東金堂、西金堂の様式で七堂伽藍を建立し、その中金堂には本尊とする聖観世音菩薩像を彫造して安置した。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple69.jpeg" alt="観音寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container70">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十番札所</span>本山寺</h3>
+                            <p>大同2年（807）平城天皇の勅願により、弘法大師が七十番札所として開基。当時は「長福寺」という名で、本堂は大師が一夜ほどの短期間にて建立したという伝説が残ります。およそ2万平方メートルの広大な境内には国宝の本堂はじめ、仁王門、五重塔、鎮守堂、大師堂、十王堂、赤堂（大日堂）、慰霊堂、鐘楼、客殿などが並び、大寺として栄華を極めた当時を偲ばせます。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple70.jpeg" alt="本山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container71">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十一番札所</span>弥谷寺</h3>
+                            <p>今からおよそ1300年前。人皇第45代聖武天皇の勅願により、行基菩薩が堂宇を建立し、疾病平癒の為、光明皇后により、『大方広仏華厳経』がお祀りされ、寺院を創建したといわれています。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple71.jpeg" alt="弥谷寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container72">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十二番札所</span>曼荼羅寺</h3>
+                            <p>創建は四国霊場で最も古い推古四年（596）。讃岐の領主・佐伯家の氏寺として創建され、初め「世坂寺(よさかでら)」と称していました。弘法大師がこの寺を訪れたのは唐から帰朝した翌年のこと。母玉依御前の仏果菩提を祈るためだったともいわれています。唐の青龍寺にならって伽藍を三年がかりで建立。本尊に大日如来を祀り、唐から持ち帰った金剛界と胎蔵界の曼荼羅を安置し、寺名を「曼荼羅寺」に改めました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple72.jpeg" alt="曼荼羅寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container73">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十三番札所</span>出釋迦寺</h3>
+                            <p>出釋迦寺の開基には、弘法大師幼少期の数ある伝説のひとつ「捨身ヶ嶽」縁起にゆかりがあります。それは、弘法大師が“真魚”と呼ばれていた7歳の時。我拝師山に登り「私は将来仏門に入り、仏の教えを広めて多くの人を救いたい。私の願いが叶うなら釈迦如来よ、姿を現したまえ。もし叶わぬのなら一命を捨ててこの身を諸仏に捧げる」と、断崖絶壁から身を投じました。すると、紫色の雲が湧き、釈迦如来と羽衣をまとった天女が舞い降り、雲の中で弘法大師を抱きとめました。命を救われ、願いが叶うことを示された弘法大師は、青年になって我拝師山の山頂で刻んで安置し、堂宇を建てたといいます。(よさかでら)」と称していました。弘法大師がこの寺を訪れたのは唐から帰朝した翌年のこと。母玉依御前の仏果菩提を祈るためだったともいわれています。唐の青龍寺にならって伽藍を三年がかりで建立。本尊に大日如来を祀り、唐から持ち帰った金剛界と胎蔵界の曼荼羅を安置し、寺名を「曼荼羅寺」に改めました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple73.jpeg" alt="出釋迦寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container74">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十四番札所</span>甲山寺</h3>
+                            <p>甲山寺周辺は弘法大師の故郷で、幼少時代によく遊んだといわれる場所。平安初期、壮年期になった弘法大師は善通寺と曼荼羅寺の間に伽藍を建立する霊地を探していました。
+                                ある時甲山を歩いていると、麓の岩窟から老人が現れ「私は昔からここに住み、人々に幸福と利益を与え、仏の教えを広めてきた聖者だ。ここに寺を建立すれば私がいつまでも守護しよう。」と言いました。弘法大師は大変喜び、毘沙門天像を刻んで岩窟に安置し、供養しました。
+                                (よさかでら)」と称していました。弘法大師がこの寺を訪れたのは唐から帰朝した翌年のこと。母玉依御前の仏果菩提を祈るためだったともいわれています。唐の青龍寺にならって伽藍を三年がかりで建立。本尊に大日如来を祀り、唐から持ち帰った金剛界と胎蔵界の曼荼羅を安置し、寺名を「曼荼羅寺」に改めました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple74.jpeg" alt="甲山寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container75">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十五番札所</span>善通寺</h3>
+                            <p>五岳山
+                                善通寺の創建は、『多度郡屏風浦善通寺之記』（江戸時代中期成立）によると、唐より帰朝されたお大師さまが、御父の寄進した四町四方の地に、師である恵果和尚の住した長安・青龍寺を模して建立したお寺で、大同2年（807）臘月（陰暦12月）朔日に斧始めを行い、弘仁4年（813）6月15日に落慶し、父の諱「善通（よしみち）」をとって「善通寺」と号したと記されています。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple75.jpeg" alt="善通寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container76">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十六番札所</span>金倉寺</h3>
+                            <p>金倉寺は、弘法大師の甥で天台寺門宗の開祖「智証大師」が誕生した地。縁起によると、弘法大師が生まれた宝亀５年に智証大師の祖父・和気道善（わけどうぜん）が建立し、道善は「自在王堂」と名づけ、仁寿元年（851）11月に官寺となった際に開基の名をとって「道善寺」となりました。その後、唐から帰朝した智証大師が唐の青龍寺にならって伽藍を造営、薬師如来を刻んで本尊に。「金倉寺」になったのは９２８年、醍醐天皇の勅命で、地名の金倉郷にちなんだ寺名となったようです。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple76.jpeg" alt="金倉寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container77">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十七番札所</span>道隆寺</h3>
+                            <p>縁起によると、和銅5年、この地方の領主、和気道隆公が桑の大木を切り、小さな薬師如来像を彫造し、草堂を建てたのが寺の初めといわれる。道隆公は、周囲5メートル近い桑の大木が、夜ごと妖しい光を放っているのを見た。この光を怪しみ矢を射ると、女の悲鳴があり、乳母が倒れて死んでいた。嘆き悲しんだ道隆公は、その桑の木で仏像を彫り、草堂に安置して供養する。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple77.jpeg" alt="道隆寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container78">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十八番札所</span>郷照寺</h3>
+                            <p>地元では「厄除うたづ大師」と呼ばれ、また、四国霊場で唯一「時宗」の霊場である。縁起によると、郷照寺は神亀2年、行基菩薩によって開創された。行基菩薩は55センチほどの阿弥陀如来像を彫造し、本尊として安置され、「仏光山・道場寺」と称した。御詠歌に「道場寺」と詠まれているのもその名残である。その後、大同2年（807）に弘法大師が訪れ、仏法有縁の地であると感得し、大師自身の像を彫造して厄除けの誓願をされた。この木造の大師像は「厄除うたづ大師」としていまも広く信仰されている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple78.jpeg" alt="郷照寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container79">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>七十九番札所</span>天皇寺</h3>
+                            <p>天平年間に四国巡錫の為に当地を訪れた行基は、鉱石が多く産出されるこの山が、カナヤマビメとカナヤマヒコの御座す山であるとし、金山と名付ける。そしてこの金山中腹に薬師如来を御本尊とした金山摩尼珠院を建立し、この地が神仏習合の地であることを現した。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple79.jpeg" alt="天皇寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container80">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十番札所</span>国分寺</h3>
+                            <p>奈良時代の創建当時の遺構をよく残した寺で、旧境内の全域が四国で唯一の国の特別史蹟。本堂は、前面と背面に桟唐戸のある鎌倉中期に再建されたものです。また境内地の中心部には創建当時の本堂の礎石・33個が点々と配置されていて、現在の唐招提寺の金堂に匹敵する規模です。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple80.jpeg" alt="国分寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container81">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十一番札所</span>白峯寺</h3>
+                            <p>白峯寺は香川県中程にある霊峰の五色台には青峯、黄峯、赤峯、白峯、黒峯の五峯の山があり、その最も西よりの白峯山にあります。参道からは瀬戸内海の雄大な景色が望める静かな古刹で、弘法大師と大師の妹の子と言われる智証大師が創建されました。弘仁6年、弘法大師は白峯山の山頂に、如意宝珠を埋め井戸を掘り、衆生済度を祈願しました。後に智証大師は、瑞光に導かれて白峯山に登頂し、地主神である白髪の老翁のご神託を受け、瀬戸内海に現れた光明に耀き芳香薫ずる霊木で千手観音像を彫造し、これを本尊として佛堂を創建したと伝えられます。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple81.jpeg" alt="白峯寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container82">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十二番札所</span>根香寺</h3>
+                            <p>五つの山に金剛界曼荼羅の五智如来を感じた弘法大師は、密教修行の地とし青峰に「花蔵院」を建立されました。後に大師の甥にあたる智証大師が訪れた際、山の鎮守である一之瀬明神に出会い、「この地にある毘沙門谷、蓮華谷、後夜谷に道場を作り、蓮華谷の木で観音像を作りなさい」というお告げをうけました。智証大師は蓮華谷の木で千手観音像を彫造し、「千手院」を建て安置しました。この霊木の切り株から芳香を放ち続けたことから「花蔵院」、「千手院」を総称して根香寺と名づけられたといわれます。根香寺は後白河天皇の帰依も厚く隆盛を極めました。後に、高松藩主らにより再興され、この時に天台宗へ改宗されました。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple82.jpeg" alt="根香寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container83">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十三番札所</span>一宮寺</h3>
+                            <p>創建は、わが国に仏教が伝来して約160年後という歴史を誇ります。開基は、奈良仏教の興隆の礎を築いた義淵僧正で、当時は大宝院と呼ばれ、南都仏教の一つ法相宗の普及をはじめ、行基菩薩、良弁僧正らを輩出。和同年間、諸国に一宮寺が建立の際、行基菩薩が堂宇を修復し、神毫山一宮寺に改名されました。また大同年間、弘法大師が訪れ約106cmの”聖観音”
+                                聖観世音菩薩を彫造し、伽藍の再興にあたり、この時に真言宗に改宗されました。
+
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple83.jpeg" alt="一宮寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container84">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十四番札所</span>屋島寺</h3>
+                            <p>弘仁6年（815）、弘法大師は嵯峨天皇（在位809〜23）の勅願を受けて屋島寺を訪ね、北嶺にあった伽藍を現在地の南嶺に移し、また十一面千手観音像を彫造し、本尊として安置した。以後、大師は屋島寺の中興開山の祖として仰がれている。屋島寺はまた、山岳仏教の霊場としても隆盛し、天暦年間（947〜57）には明達律師が訪ねて四天王像を奉納された。現在の本尊・十一面千手観音坐像はこのころに造られており、国指定重要文化財になっている。やはり国指定重要文化財の本堂は鎌倉時代に造営されているが、寺運は戦乱によって衰退する。だが、国主・生駒氏の寺領寄進や、歴代藩主の援助により相次いで修築され、鎌倉・江戸時代の風格を現代に伝えている。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple84.jpeg" alt="屋島寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container85">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十五番札所</span>八栗寺</h3>
+                            <p>五剣山の頂上からは、讃岐、阿波、備前など四方八国が見渡すことができたので、もともと八国寺という寺名でした。
+                                延暦年中、師は唐に留学する前に、再度この山に登りました。そして入唐求法の成否を占うために8個の焼き栗を植えられました。無事帰国し、再び訪れると、芽の出るはずない焼き栗が芽吹いていました。これが八国寺を八栗寺へ改名した由来です。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple85.jpeg" alt="八栗寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container86">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十六番札所</span>志度寺</h3>
+                            <p>香川県東部、志度湾に面して建立される志度寺。海の向こうはるかには、屋島や五剣山の稜線を望めます。開創は古く推古天皇33年（625）、四国霊場屈指の古刹です。海洋技能集団海人族の凡園子（おおしそのこ）が霊木を刻み、十一面観音（かんのん）像を彫り、精舎を建てたのが始まりと言われ、その後、藤原鎌足の息子、藤原不比等が妻の墓を建立し「死度道場」と名づけられました。その息子房前の時代、持統天皇7年（693）、行基とともに堂宇を拡張し、学問の道場として栄えました。能楽の作品「海士（あま）」の舞台としても語り継がれています。
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple86.jpeg" alt="志度寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container87">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十七番札所</span>長尾寺</h3>
+                            <p>唐から戻った大師は、再びこの地を訪れ「大日経」を一石に一字ずつ書写し供養塔を設立し、その時に真言宗に改宗。長きに渡り多くの天皇から帰依された寺でしたが、天正の兵火により、本堂以外は灰燼に帰します。江戸時代に藩主松平頼重が、堂塔を整備。その時に天台宗に改めています。
+
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple87.jpeg" alt="長尾寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-container" id="modal-container88">
+                <div class="modal-body">
+                    <div class="modal-close"></div>
+                    <div class="modal-content">
+                        <div class="container_text">
+                            <h3 class="temple_name"><span>八十八番札所</span>大窪寺</h3>
+                            <p>八十八ヶ所結願（けちがん）の霊場「大窪寺」。徳島県の県境に近い矢筈山（標高788ｍ）の東側中腹に位置します。縁起によると、養老元年に行基菩薩がこの地を訪れた際に、霊夢を感得し草庵を建て修行をしたと言われます。弘仁6年に、唐から帰国した弘法大師が、現在の奥の院にある岩窟で、虚空蔵求聞持法を修法し堂宇を建立。等身大の薬師如来坐像を彫造し本尊とされました。また唐の恵果阿闍梨より授かった三国（印度、唐、日本）伝来の錫杖を納めて大窪寺と名づけ、結願の地と定めました。本堂西側にそそりたつ女体山には奥の院があります。大師が本尊に水を捧げるために独鈷で加持すると清水が湧き出たと伝えられます。その水を薬とともに服用し、ご利益を受ける人も少なくありません。
+
+                            </p>
+                        </div>
+                        <div class="temple_img">
+                            <img src="img/temple88.jpeg" alt="大窪寺">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <p>©︎yamanekohike</p>
+
+
+    </footer>
+
+    <!-- gsapのインストール -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        let position = 0;
+        let count = 0;
+        const $id = function (id) { return document.getElementById(id); };
+        const $saikoro = $("#saikoro");
+        const $message = $("#message");
+
+        function anime(callback) {
+            if (count > 20) { // 適当に20回ほど振る
+                count = 0;
+                $id("rollbtn").disabled = false; // ボタンを使える状態にする
+                callback(); // アニメーションが終わったらコールバック関数を実行
+                return 0;
+            }
+            const roll = Math.floor(Math.random() * 6 + 1); // 1から6までのランダムな数を生成
+            const rollImage = roll + ".png"; // 画像ファイル名生成
+            $saikoro.html(`<img src="img/${rollImage}" width="100" height="100">`); // サイコロの画像を表示
+            count++;
+            setTimeout(() => {
+                anime(callback); // コールバック関数を渡して再帰呼び出し
+            }, 50); // 50ミリ秒間隔で表示切り替え
+        }
+
+        function saikoro() {
+            count = 0;
+            $id("rollbtn").disabled = true; // ボタンを使用不可にする
+            anime(() => { // アニメーションが終わった後に実行するコールバック関数を指定
+                const roll = Math.floor(Math.random() * 6 + 1);
+                const rollImage = roll + ".png";
+                $saikoro.html(`<img src="img/${rollImage}" width="100" height="100">`);
+
+                position += roll;
+
+                // Playerのポジションを更新の実行
+                updatePosition();
+
+                $message.text("サイコロの目は" + roll + "です。\n 現在 " + position + "番札所にいます。");
+
+                // replaceメソッドで\nを<br>に置換
+                // できない
+                // let result = $message.text.replace(/\n/, '<br>');
+
+                if (position > 87) {
+                    $message.text("88箇所全て巡礼しました。満願です！");
+                    $("button").prop("disabled", true);
+                    $("#square88").addClass("player");
+                }
+
+                // $(`#modal-container${position}`).addClass("active");
+
+                // サイコロが止まって2秒後にモーダルが開く処理
+                setTimeout(function () {
+                    $(`#modal-container${position}`).addClass("active");
+                }, 2000);
+
+                // positionが88以上になったら88番のモーダルを開く
+                if (position >= 88) {
+                    $("#modal-container88").addClass("active");
+                }
+                $id("rollbtn").disabled = false;
+            });
+            audio();
+        }
+
+        // function rollDice() {
+        //     $("#rollbtn").prop("disabled", true);
+        //     saikoro();
+        //     updatePosition();
+
+        // }
+
+        // ボタン押したら効果音を鳴らす関数
+        function audio() {
+            $('#sai_audio')[0].currentTime = 0; // 連続クリックに対応
+            $('#sai_audio')[0].play(); // クリックしたら音を再生
+        }
+
+
+        // /*
+        //  * 起動時の処理
+        //  */
+        // window.onload = function () {
+        //     rollDice();		// 一回だけサイコロを振る
+        // }
+
+
+        // プレイヤーの位置を更新する関数
+        function updatePosition() {
+            // 前回の位置をクリアする
+            $(".square").removeClass("player");
+
+            // 新しい位置を表示する
+            $("#square" + position).addClass("player");
+
+        }
+
+        // 盤面を初期化する関数
+        function initBoard() {
+            // 盤面のすべてのマス目をループして、クラスを設定する
+            // for (let i = 0; i < 88; i++) {
+            //     $("#square" + i).addClass("square");
+
+            // }
+
+
+            // プレイヤーの初期位置を設定する
+            $("#square0").addClass("player");
+        }
+
+        // 盤面を初期化する
+        initBoard();
+
+
+        // モーダル
+
+        $(function () {
+            // 変数に要素を入れる
+            const open = $('.modal-open'),
+                close = $('.modal-close'),
+                container = $('.modal-container');
+
+            //開くボタンをクリックしたらモーダルを表示する<これは消す
+            // open.on('click', function () {
+            //     container.addClass('active');
+            //     return false;
+            // });
+
+
+            //閉じるボタンをクリックしたらモーダルを閉じる
+            close.on('click', function () {
+                container.removeClass('active');
+            });
+
+            //モーダルの外側をクリックしたらモーダルを閉じる
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('.modal-body').length) {
+                    container.removeClass('active');
+                }
+            });
+        });
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
